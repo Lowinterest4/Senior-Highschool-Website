@@ -10,17 +10,28 @@
 <h1>Welcome to Page 1</h1>
 
 <form class="card" id="contactForm">
-    <input type="text" name="user_name" placeholder="Your Name" required>
-    <input type="email" name="user_email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
+    <!-- Name must match {{name}} in EmailJS template -->
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <!-- Email must match {{email}} in EmailJS template -->
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <!-- Company must match [Company Name] in EmailJS template -->
+    <input type="text" name="company" placeholder="Company Name" required>
+
+    <!-- Optional message (if your template uses it) -->
+    <textarea name="message" placeholder="Your Message"></textarea>
+
     <button type="submit">Send Inquiry</button>
 </form>
 
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-    emailjs.init("vSkS4WZEGJ2v2rWaM"); // Your Public Key
+    // Initialize EmailJS with your public key
+    emailjs.init("vSkS4WZEGJ2v2rWaM");
 
+    // Form submission
     document.getElementById("contactForm").addEventListener("submit", function(e) {
         e.preventDefault();
 
