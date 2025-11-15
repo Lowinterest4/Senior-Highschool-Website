@@ -1,0 +1,9 @@
+<html>
+<head>
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>Welcome to the Main Page</h1>
+    <button onclick="location.href='Page1.html'">Go to Page 1</button>
+</body>
+</html>
