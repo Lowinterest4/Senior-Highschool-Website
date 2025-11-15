@@ -16,10 +16,7 @@
     <!-- Email must match {{email}} in EmailJS template -->
     <input type="email" name="email" placeholder="Your Email" required>
 
-    <!-- Company must match [Company Name] in EmailJS template -->
-    <input type="text" name="company" placeholder="Company Name" required>
-
-    <!-- Optional message (if your template uses it) -->
+    <!-- Message optional -->
     <textarea name="message" placeholder="Your Message"></textarea>
 
     <button type="submit">Send Inquiry</button>
@@ -28,14 +25,20 @@
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-    // Initialize EmailJS with your public key
-    emailjs.init("vSkS4WZEGJ2v2rWaM");
+    emailjs.init("vSkS4WZEGJ2v2rWaM"); // Your Public Key
 
-    // Form submission
     document.getElementById("contactForm").addEventListener("submit", function(e) {
         e.preventDefault();
 
-        emailjs.sendForm("service_b22wmmi", "template_ai5nnw8", this)
+        // Collect form data
+        const formData = {
+            name: this.name.value,
+            email: this.email.value,
+            message: this.message.value,
+            company: "University of Rizal System" // fixed value for [Company Name]
+        };
+
+        emailjs.send("service_b22wmmi", "template_ai5nnw8", formData)
             .then(() => {
                 alert("Your message has been sent!");
                 this.reset();
