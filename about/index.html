@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Page 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<h1>Welcome to Page 1</h1>
+
+<form class="card" id="contactForm">
+    <!-- Name must match {{name}} in EmailJS template -->
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <!-- Email must match {{email}} in EmailJS template -->
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <!-- Message optional -->
+    <textarea name="message" placeholder="Your Message"></textarea>
+
+    <button type="submit">Send Inquiry</button>
+</form>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    emailjs.init("vSkS4WZEGJ2v2rWaM"); // Your Public Key
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Collect form data
+        const formData = {
+            name: this.name.value,
+            email: this.email.value,
+            message: this.message.value,
+            company: "University of Rizal System" // fixed value for [Company Name]
+        };
+
+        emailjs.send("service_b22wmmi", "template_ai5nnw8", formData)
+            .then(() => {
+                alert("Your message has been sent!");
+                this.reset();
+            })
+            .catch((error) => {
+                console.error("EmailJS error:", error);
+                alert("Failed to send message. Check console for details.");
+            });
+    });
+</script>
+
+</body>
+</html>
