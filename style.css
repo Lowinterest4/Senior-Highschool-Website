@@ -280,55 +280,89 @@ body {
   }
 }
 
-/* Strand Page Section */
-.strand-section {
-  max-width: 900px;
+/* Strands Section */
+.strands-section {
+  max-width: 1000px;
   margin: 50px auto;
-  padding: 30px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  border: 2px solid #0a3d62;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
 }
 
-.strand-section h2 {
+.strands-section h2 {
   text-align: center;
   color: #0a3d62;
   font-size: 32px;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #f1c40f;
-  display: inline-block;
-  padding-bottom: 5px;
+  margin-bottom: 30px;
 }
 
-.strand-section h3 {
-  color: #0a3d62;
-  margin-top: 25px;
+/* Grid layout for strands */
+.strands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Individual strand cards */
+.strand-card {
+  background-color: #f9f9f9;
+  border: 2px solid #0a3d62;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.strand-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 
-.strand-section p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.strand-section ul {
-  list-style-type: disc;
-  padding-left: 25px;
-  color: #222;
-}
-
-.strand-section ul li {
-  margin-bottom: 8px;
-  font-size: 16px;
-}
-
-/* Add a subtle hover effect for lists (optional) */
-.strand-section ul li:hover {
+.strand-card h3 {
   color: #0a3d62;
-  transition: 0.3s;
+  margin: 10px 0 5px 0;
+}
+
+.strand-card p {
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.strand-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f1c40f;
+  color: #0a3d62;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.strand-btn:hover {
+  background-color: #d4ac0d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .strand-card img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .strands-section h2 {
+    font-size: 28px;
+  }
+  .strand-card p {
+    font-size: 13px;
+  }
+  .strand-btn {
+    padding: 6px 12px;
+  }
 }
 
 /* Responsive Strand Section */
