@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us - Senior High School</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../about.css"> <!-- Separate CSS for About page -->
 </head>
 <body>
   <!-- Top Header -->
@@ -26,9 +27,7 @@
   <!-- Navigation Area -->
   <nav class="navbar">
     <ul>
-      <li class="dropdown">
-        <a href="../" class="dropbtn">Home</a>
-      </li>
+      <li class="dropdown"><a href="../" class="dropbtn">Home</a></li>
       <li class="dropdown">
         <a href="about.html" class="dropbtn">About Us</a>
         <div class="dropdown-content">
@@ -65,7 +64,7 @@
   </nav>
 
   <!-- About Us Content Section -->
-  <section class="about-section" style="max-width:900px; margin:50px auto; padding:30px; background-color:#f9f9f9; border-radius:10px; border:2px solid #0a3d62; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+  <section class="about-section">
     <h2>Welcome to Our Senior High School</h2>
     <p>Our school is committed to providing quality education and developing the full potential of every student. We aim to foster excellence, discipline, and leadership in a nurturing and inclusive environment.</p>
 
@@ -83,9 +82,29 @@
       <li>Teamwork</li>
       <li>Respect</li>
     </ul>
+  </section>
 
-    <h3>Faculty & Staff</h3>
-    <p>Our dedicated teachers and staff ensure that every student receives guidance, support, and encouragement to reach their full potential.</p>
+  <!-- Faculty & Staff Section -->
+  <section class="faculty-section">
+    <h2>Faculty & Staff</h2>
+    <div class="faculty-grid">
+      <div class="faculty-card">
+        <img src="teacher1.jpg" alt="Teacher Name">
+        <h4>John Doe</h4>
+        <p>Math Teacher</p>
+      </div>
+      <div class="faculty-card">
+        <img src="teacher2.jpg" alt="Teacher Name">
+        <h4>Jane Smith</h4>
+        <p>Science Teacher</p>
+      </div>
+      <div class="faculty-card">
+        <img src="teacher3.jpg" alt="Teacher Name">
+        <h4>Michael Lee</h4>
+        <p>English Teacher</p>
+      </div>
+      <!-- Add more teacher cards as needed -->
+    </div>
   </section>
 
 </body>
