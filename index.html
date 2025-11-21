@@ -3,74 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SHS Homepage Template</title>
+  <title>Senior High School</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">Senior High School</div>
-    <div class="nav-links">
-      <div class="dropdown">About
-        <div class="dropdown-content">
-          <a href="#">History</a>
-          <a href="#">Mission & Vision</a>
-        </div>
-      </div>
-      <div class="dropdown">Admissions
-        <div class="dropdown-content">
-          <a href="#">Requirements</a>
-          <a href="#">Apply Now</a>
-        </div>
-      </div>
-      <div class="dropdown">Academics
-        <div class="dropdown-content">
-          <a href="#">Strands</a>
-          <a href="#">Curriculum</a>
-        </div>
-      </div>
-      <div class="dropdown">Campus Life
-        <div class="dropdown-content">
-          <a href="#">Clubs</a>
-          <a href="#">Facilities</a>
-        </div>
-      </div>
+  <!-- Top Header with Logo and School Name -->
+  <header class="top-header">
+    <div class="logo-container">
+      <img src="your-logo.png" alt="School Logo" class="school-logo" />
+      <h1 class="school-name">Senior High School</h1>
     </div>
-  </nav>
-
-  <header class="banner">
-    UNIVERSITY BANNER HERE
   </header>
 
-  <section class="intro">
-    <h2>Welcome to Our Senior High School</h2>
-    <p>
-      Experience a university-integrated Senior High School program designed to prepare students for academic excellence, research, and real-world readiness.
-    </p>
+  <!-- Banner Area -->
+  <section class="banner">
+    <div class="banner-text">
+      <h2>Welcome to Our Senior High School</h2>
+      <p>Excellence. Discipline. Leadership.</p>
+    </div>
   </section>
 
+  <!-- Navigation Area -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="strands.html">Strands</a></li>
+      <li><a href="admission.html">Admission</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- FAQ Section -->
   <section class="faq-section">
     <h2>Frequently Asked Questions</h2>
-    <table class="faq-table">
-      <tr>
-        <td class="question">What strands do you offer?</td>
-        <td><button class="toggle-btn">Show</button></td>
-      </tr>
-      <tr class="answer-row"><td colspan="2">We offer STEM, HUMSS, ABM, and GAS strands.</td></tr>
 
-      <tr>
-        <td class="question">How do I apply?</td>
-        <td><button class="toggle-btn">Show</button></td>
-      </tr>
-      <tr class="answer-row"><td colspan="2">You may apply online through our admissions portal.</td></tr>
+    <div class="faq-item">
+      <button class="faq-question">What strands do you offer?</button>
+      <div class="faq-answer">
+        <p>We offer ABM, HUMSS, STEM, and TVL tracks.</p>
+      </div>
+    </div>
 
-      <tr>
-        <td class="question">Do you have scholarships?</td>
-        <td><button class="toggle-btn">Show</button></td>
-      </tr>
-      <tr class="answer-row"><td colspan="2">Yes, we offer merit-based and financial assistance programs.</td></tr>
-    </table>
+    <div class="faq-item">
+      <button class="faq-question">How do I enroll?</button>
+      <div class="faq-answer">
+        <p>Enrollment can be completed through our online portal or onsite.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Do you accept transferees?</button>
+      <div class="faq-answer">
+        <p>Yes, transferees are welcome depending on requirements.</p>
+      </div>
+    </div>
   </section>
 
-  <script src="script.js"></script>
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('active');
+        const answer = q.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
