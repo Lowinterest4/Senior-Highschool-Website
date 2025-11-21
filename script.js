@@ -1,29 +1,24 @@
-<script>
-// Dropdown functionality
+// Dropdown Navigation Script
 const dropdowns = document.querySelectorAll('.dropdown');
+
 dropdowns.forEach(dropdown => {
   const button = dropdown.querySelector('.dropbtn');
-  const content = dropdown.querySelector('.dropdown-content');
+  const menu = dropdown.querySelector('.dropdown-content');
 
   button.addEventListener('click', (e) => {
     e.preventDefault();
-    // Close other dropdowns
+    // Close all other dropdowns
     dropdowns.forEach(d => {
       if(d !== dropdown) {
         d.querySelector('.dropdown-content').style.display = 'none';
       }
     });
-
     // Toggle current dropdown
-    if(content.style.display === 'block') {
-      content.style.display = 'none';
-    } else {
-      content.style.display = 'block';
-    }
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
   });
 });
 
-// Close dropdowns if clicked outside
+// Close dropdowns if clicking outside
 window.addEventListener('click', (e) => {
   if(!e.target.matches('.dropbtn')) {
     dropdowns.forEach(dropdown => {
@@ -31,4 +26,3 @@ window.addEventListener('click', (e) => {
     });
   }
 });
-</script>
