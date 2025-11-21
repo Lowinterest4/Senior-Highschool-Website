@@ -1,28 +1,16 @@
-// Dropdown Navigation Script
+// Dropdown Navigation Script (Hover-based)
 const dropdowns = document.querySelectorAll('.dropdown');
 
 dropdowns.forEach(dropdown => {
-  const button = dropdown.querySelector('.dropbtn');
   const menu = dropdown.querySelector('.dropdown-content');
 
-  button.addEventListener('click', (e) => {
-    e.preventDefault();
-    // Close all other dropdowns
-    dropdowns.forEach(d => {
-      if(d !== dropdown) {
-        d.querySelector('.dropdown-content').style.display = 'none';
-      }
-    });
-    // Toggle current dropdown
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  // Show dropdown on mouse enter
+  dropdown.addEventListener('mouseenter', () => {
+    menu.style.display = 'block';
   });
-});
 
-// Close dropdowns if clicking outside
-window.addEventListener('click', (e) => {
-  if(!e.target.matches('.dropbtn')) {
-    dropdowns.forEach(dropdown => {
-      dropdown.querySelector('.dropdown-content').style.display = 'none';
-    });
-  }
+  // Hide dropdown on mouse leave
+  dropdown.addEventListener('mouseleave', () => {
+    menu.style.display = 'none';
+  });
 });
