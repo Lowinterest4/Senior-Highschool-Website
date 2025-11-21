@@ -356,6 +356,45 @@ body {
     font-size: 15px;
   }
 }
+/* About Section */
+.about-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border: 2px solid #0a3d62;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-section h2 {
+  color: #0a3d62;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-section h3 {
+  color: #0a3d62;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #333;
+}
+
+.about-section ul li {
+  margin-bottom: 8px;
+}
 
 /* Faculty Section */
 .faculty-section {
